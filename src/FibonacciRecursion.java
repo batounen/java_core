@@ -4,9 +4,7 @@ public class FibonacciRecursion {
     // 0 1 1 2 3 5 8 13 21 34 55
 
     public static void main(String[] args) {
-
         System.out.println(fibonacci(6));
-
     }
 
     static long fibonacci(int n) {
