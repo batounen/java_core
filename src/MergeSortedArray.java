@@ -31,9 +31,10 @@ public class MergeSortedArray {
     Follow up: Can you come up with an algorithm that runs in O(m + n) time?
      */
 
+
     // 1 ms, faster than 41.05% & 42.7 MB, less than 62.32%
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        for(int i = m, j = 0; i < (m+n); i++, j++)  {
+        for(int i = m, j = 0; i < (m+n); i++, j++) {
             nums1[i] = nums2[j];
         }
         Arrays.sort(nums1);
