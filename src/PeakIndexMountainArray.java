@@ -34,17 +34,15 @@ public class PeakIndexMountainArray {
     // Binary search - 0 ms, faster than 100.00% & 59 MB, less than 98.20%
     public static int peakIndexInMountainArray2(int[] arr) {
         int start = 0, end = arr.length - 1;
-        while (start <= end) {
+        while (start < end) {
             int mid = start + (end - start) / 2;
-            if (arr[mid] < arr[mid + 1]) {
-                start = mid + 1;
-            } else if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1]) {
-                return mid;
-            } else if (arr[mid] < arr[mid - 1]) {
-                end = mid - 1;
+            if (arr[mid] > arr[mid + 1]) {              // this checks if the number is in the descending part of the array
+                end = mid;
+            } else {                                    // if this block runs the number is in the ascending part of the array
+                start = mid + 1;                        // mid + 1 -> because we know that mid + 1 element is > mid element
             }
         }
-        return -1;
+        return start;
     }
 
 
