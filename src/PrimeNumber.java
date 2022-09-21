@@ -47,4 +47,20 @@ public class PrimeNumber {
         }
         System.out.println(isPrime ? "Prime" : "Not Prime");
     }
+
+
+    // OPTION 3
+    public boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        int a = 2;
+        while (a * a <= n) {
+            if (n % a == 0) {
+                return false;
+            }
+            a++;
+        }
+        return a * a > n;           // the algo checked till sqrt of the number that means no number was able to divide n evenly. Thus no need to check further.
+    }
 }
