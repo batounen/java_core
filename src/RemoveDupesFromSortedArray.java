@@ -17,7 +17,7 @@ public class RemoveDupesFromSortedArray {
 
 
     // 1 ms, faster than 100.00% & 43.8 MB, less than 97.16%
-    public static int removeDuplicates(int[] nums) {
+    public static int removeDuplicates1(int[] nums) {
 
         int index = 1;                  // first number is always unique
         for (int i = 0; i < nums.length - 1; i++) {
@@ -30,11 +30,17 @@ public class RemoveDupesFromSortedArray {
     }
 
 
-    public static void main(String[] args) {
+    // OPTION 2
+    public static int[] removeDuplicates2(int[] array){
+        return Arrays.stream(array).distinct().toArray();
+    }
 
+
+    public static void main(String[] args) {
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-        System.out.println(removeDuplicates(nums));                 // 5
+        System.out.println(removeDuplicates1(nums));                 // 5
         System.out.println(Arrays.toString(nums));               // [0, 1, 2, 3, 4, 2, 2, 3, 3, 4]
 
+        System.out.println(Arrays.toString(removeDuplicates2(nums)));       // [0, 1, 2, 3, 4]
     }
 }
