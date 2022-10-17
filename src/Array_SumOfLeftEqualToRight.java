@@ -9,8 +9,8 @@ public class Array_SumOfLeftEqualToRight {
      */
 
     public static void main(String[] args) {
-        System.out.println(sumLeftRight1(new int[]{4, 9, 1, 3, 6, 4}));
-        System.out.println(sumLeftRight2(new int[]{4, 9, 1, 3, 6, 4}));
+        System.out.println(sumLeftRight1(new int[]{-1, 6, 4, 9, 1, 0, 6, 13}));
+        System.out.println(sumLeftRight2(new int[]{-1, 6, 4, 9, 1, 0, 6, 13}));
     }
 
     public static int sumLeftRight1(int[] arr) {
