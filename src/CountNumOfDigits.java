@@ -6,8 +6,7 @@ public class CountNumOfDigits {
 
     // String Way
     public static int numCounter1(int a) {
-        String number = String.valueOf(a);
-        return number.length();
+        return String.valueOf(a).length();
     }
 
     // Number way
