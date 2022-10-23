@@ -22,25 +22,26 @@ public class LongestSubstringWithoutRepeatingCharacters {
         s consists of English letters, digits, symbols and spaces.
      */
 
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring1("jbpnbwwd"));
+    }
 
-    // OPTION 1 - TODO: needs some bug fixing
+    // OPTION 1 - 674 ms, faster than 5.00% & 144.9 MB, less than 5.12%
     public static int lengthOfLongestSubstring1(String s) {
-
-        String output = "";
+        StringBuilder output = new StringBuilder();
         int longest = 0;
-
         for (int i = 0; i < s.length(); i++) {
             for (int j = i; j < s.length(); j++) {
-                if (!output.contains("" + s.charAt(j))) {
-                    output += s.charAt(j);
+                if (!output.toString().contains("" + s.charAt(j))) {
+                    output.append(s.charAt(j));
                 } else {
-                    if (output.length() > longest) {
-                        longest = output.length();
-                        output = "";
-                        break;
-                    }
+                    break;
                 }
             }
+            if (output.length() > longest) {
+                longest = output.length();
+            }
+            output.setLength(0);
         }
         return longest;
     }
@@ -67,7 +68,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
     public static int lengthOfLongestSubstring3(String s) {
         HashSet<Character> hash_set = new HashSet<>();
         int left = 0, right = 0, max = 0;
-
         while (right < s.length()) {
             if (!hash_set.contains(s.charAt(right))) {
                 hash_set.add(s.charAt(right));
