@@ -14,14 +14,14 @@ public class CamelCase {
         //OPTION 1
         String str = "Today is FRIDAY Brodas";
         String strLower = str.toLowerCase();
-        String camelCase = "";
+        StringBuilder camelCase = new StringBuilder();
 
         for (int i = 0; i < strLower.length(); i++) {
             if (strLower.charAt(i) == ' ') {
-                camelCase += strLower.substring(i + 1, i + 2).toUpperCase();
+                camelCase.append(strLower.substring(i + 1, i + 2).toUpperCase());
                 i++;
             } else {
-                camelCase += strLower.charAt(i);
+                camelCase.append(strLower.charAt(i));
             }
         }
         System.out.println(camelCase);
@@ -29,13 +29,12 @@ public class CamelCase {
 
         //OPTION 2 - Array
         String[] arrayOfStr = strLower.split(" ");
-        String arrayCamel = "";
-
+        StringBuilder arrayCamel = new StringBuilder();
         for (int i = 0; i < arrayOfStr.length; i++) {
             if (i > 0) {
-                arrayCamel += (arrayOfStr[i].substring(0, 1).toUpperCase() + arrayOfStr[i].substring(1));
+                arrayCamel.append(arrayOfStr[i].substring(0, 1).toUpperCase()).append(arrayOfStr[i].substring(1));
             } else {
-                arrayCamel += arrayOfStr[i];
+                arrayCamel.append(arrayOfStr[i]);
             }
         }
         System.out.println(arrayCamel);
