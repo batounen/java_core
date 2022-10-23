@@ -16,14 +16,12 @@ public class LongestCommonPrefix {
     public static void main(String[] args) {
         String[] s = {"flower", "flow", "flight"};
         System.out.println("longestCommonPrefix = " + longestCommonPrefix(s));
-
         System.out.println("longestPrefix = " + longestPrefix(s));
     }
 
 
     // OPTION 1 - 6 ms, faster than 26.66% & 41.9 MB, less than 72.51%
     private static String longestCommonPrefix(String[] strs) {
-
         if (strs.length == 1) {
             return strs[0];
         } else {
@@ -48,14 +46,12 @@ public class LongestCommonPrefix {
 
     // OPTION 2 - Faster runtime
     public static String longestPrefix(String[] strs) {
-
         int ind = 0;
         while (ind < strs[0].length()) {
             char c = strs[0].charAt(ind);
             int i = 0;
             while (i < strs.length && strs[i].length() > ind && strs[i].charAt(ind) == c) {
                 i++;
-                continue;
             }
             if (i == strs.length) {
                 ind++;
