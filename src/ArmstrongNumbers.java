@@ -16,7 +16,7 @@ public class ArmstrongNumbers {
     // OPTION 1 - Integer way
     public static boolean armstrongNumber(int num) {
         int x = num, digit, total = 0;
-        while (x >= 1) {
+        while (x > 0) {
             digit = x % 10;
             total += Math.pow(digit, 3);
             x /= 10;
@@ -31,7 +31,7 @@ public class ArmstrongNumbers {
         String str = Integer.toString(num);
         String[] s = str.split("");
         for (String each : s) {
-            total += Math.pow(Integer.parseInt(each), 3);
+            total += Math.pow(Integer.parseInt(each), str.length());
         }
         return total == num;
     }
