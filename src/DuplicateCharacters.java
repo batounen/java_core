@@ -18,7 +18,8 @@ public class DuplicateCharacters {
     public static void main(String[] args) {
 
         String str = "abccccccdffddd";
-        String duplicates = "", unique = "";
+        StringBuilder duplicates = new StringBuilder();
+        StringBuilder unique = new StringBuilder();
         int count;
 
         for (int i = 0; i < str.length(); i++) {
@@ -28,14 +29,14 @@ public class DuplicateCharacters {
                     count++;
                 }
             }
-            if (count > 1 && !duplicates.contains("" + str.charAt(i))) {
-                duplicates += str.charAt(i);
+            if (count > 1 && duplicates.indexOf("" + str.charAt(i)) == -1) {
+                duplicates.append(str.charAt(i));
                 System.out.println(str.charAt(i) + " was duplicated " + count + " times.");
             }
             if (count == 1) {
-                unique += str.charAt(i) + " ";
+                unique.append(str.charAt(i));
             }
         }
-        System.out.println(unique + "are the unique characters.");
+        System.out.println(unique + " are the unique characters.");
     }
 }
