@@ -11,19 +11,17 @@ public class LongestPalindrome {
 		    Output: No palindrome
      */
     public static void main(String[] args) {
-
         String[] words = {"java", "longer word", "civic", "apple", "racecar", "mom", "anna"};
-        int palindromeLength = 0, palindromeCount = 0;
-        String longestPalindrome = "";
+        int palindromeCount = 0;
+        StringBuilder longestPalindrome = new StringBuilder();
 
         for (String eachWord : words) {
-            String backwards = "";
+            StringBuilder backwards = new StringBuilder();
             for (int j = eachWord.length() - 1; j >= 0; j--) {
-                backwards += eachWord.charAt(j);
+                backwards.append(eachWord.charAt(j));
             }
-            if (eachWord.equals(backwards) && eachWord.length() > palindromeLength) {
-                palindromeLength = eachWord.length();
-                longestPalindrome = eachWord;
+            if (eachWord.equals(backwards.toString()) && eachWord.length() > longestPalindrome.length()) {
+                longestPalindrome.replace(0, longestPalindrome.length(), eachWord);
                 palindromeCount++;
             }
         }
@@ -32,6 +30,5 @@ public class LongestPalindrome {
         } else {
             System.out.println("longestPalindrome = " + longestPalindrome);
         }
-
     }
 }
