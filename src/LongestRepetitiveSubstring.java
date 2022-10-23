@@ -13,12 +13,9 @@ public class LongestRepetitiveSubstring {
      */
 
     public static void main(String[] args) {
-
         String str = "abcababcababcab";
-
         for (int i = str.length() - 1; i >= 0; i--) {
             String longest = str.substring(0, i);
-
             if (str.replace(longest, "").length() == 0) {
                 System.out.println(longest);
                 break;
@@ -27,6 +24,5 @@ public class LongestRepetitiveSubstring {
                 System.out.println("There is no repetitive substring");
             }
         }
-
     }
 }
