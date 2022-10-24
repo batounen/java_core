@@ -21,15 +21,15 @@ public class MajorityElement {
 
     // OPTION 1 - 2224 ms, faster than 5.02% & 56.4 MB, less than 35.08%
     public int majorityElement1(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
+        for (int num : nums) {
             int count = 0;
-            for (int j = 0; j < nums.length; j++) {
-                if (nums[i] == nums[j]) {
+            for (int each : nums) {
+                if (num == each) {
                     count++;
                 }
             }
             if (count > nums.length / 2) {
-                return nums[i];
+                return num;
             }
         }
         return 0;
