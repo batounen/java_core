@@ -26,7 +26,6 @@ public class MissingNumber {
 
     // 0 ms, faster than 100.00% & 42.6 MB, less than 99.33%
     public static int missingNumber1(int[] nums) {
-
         int total1 = 0, total2 = 0;
         for (int each : nums) {
             total1 += each;
@@ -40,14 +39,12 @@ public class MissingNumber {
 
     // 413 ms & 50.7 MB
     public static int missingNumber2(int[] nums) {
-
         Arrays.sort(nums);
         int n = nums.length;
-
         for (int i = 0; i <= n; i++) {
             int count = 0;
-            for (int j = 0; j < n; j++) {
-                if (i == nums[j]) {
+            for (int num : nums) {
+                if (i == num) {
                     count++;
                 }
             }
@@ -56,9 +53,7 @@ public class MissingNumber {
             }
         }
         return -1;
-
     }
-
 
     public static void main(String[] args) {
         System.out.println(missingNumber2(new int[]{3, 0, 1}));
