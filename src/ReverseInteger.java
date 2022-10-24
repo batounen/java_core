@@ -1,7 +1,7 @@
 public class ReverseInteger {
 
     /*
-    Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+    Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.
      */
 
     public static void main(String[] args) {
@@ -23,17 +23,15 @@ public class ReverseInteger {
     // OPTION 1 - 1-2 ms, 40-41 MB memory
     public static int reverse(int x) {
         int original = Math.abs(x), digit, reversed = 0;
-        while (original >= 1) {
+        while (original > 0) {
             digit = original % 10;
             original /= 10;
-
             if (reversed > Integer.MAX_VALUE / 10 || reversed == Integer.MAX_VALUE / 10 && digit > 7) {
                 return 0;
             }
             if (reversed < Integer.MIN_VALUE / 10 || reversed == Integer.MIN_VALUE / 10 && digit < -8) {
                 return 0;
             }
-
             reversed = reversed * 10 + digit;
         }
         if (x < 0) {
@@ -45,13 +43,12 @@ public class ReverseInteger {
 
     // String with loop approach without int limitation
     private static int reverseInt(int x) {
-
         String s = Integer.toString(x);
-        String reversed = "";
+        StringBuilder reversed = new StringBuilder();
         for (int i = s.length() - 1; i >= 0; i--) {
-            reversed += "" + s.charAt(i);
+            reversed.append(s.charAt(i));
         }
-        return Integer.parseInt(reversed);
+        return Integer.parseInt(reversed.toString());
     }
 
 
