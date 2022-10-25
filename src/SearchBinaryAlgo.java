@@ -8,10 +8,8 @@ public class SearchBinaryAlgo {
 
     // if the given int[] is RANDOM (not sorted)
     static int binarySearch1(int[] arr, int target) {
-
         Arrays.sort(arr);                                   // Array needs to be sorted thus included in the algorithm
         int start = 0, end = arr.length - 1, middle;           // int middle can be declared inside the loop as well
-
         while (start <= end) {
             middle = start + (end - start) / 2;                     // (start + end) / 2 -> may exceed int MAX_VALUE for big data
             if (arr[middle] > target) {
@@ -28,17 +26,13 @@ public class SearchBinaryAlgo {
 
     // if the given int[] is sorted either ascending or descending order
     static int binarySearch2(int[] arr, int target) {
-
         int start = 0, end = arr.length - 1, mid;
         boolean isAscending = arr[start] < arr[end];
-
         while (start <= end) {
             mid = start + (end - start) / 2;
-
             if (arr[mid] == target) {
                 return mid;
             }
-
             if (isAscending) {
                 if (arr[mid] > target) {
                     end = mid - 1;
