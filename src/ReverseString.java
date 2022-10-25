@@ -19,20 +19,16 @@ public class ReverseString {
     }
 
     public static void main(String[] args) {
-
         char[] input = {'h', 'e', 'l', 'l', 'o'};
         for (int i = 0; i < input.length / 2; i++) {
             swap(input, i, input.length - 1 - i);
         }
         System.out.println("input.toString() = " + Arrays.toString(input));         // input.toString() = [o, l, l, e, h]
 
-
         // Faster runtime solution
         char[] s = {'h', 'e', 'l', 'l', 'o'};
         int left = 0, right = s.length - 1;
-
-        char temp = ' ';
-
+        char temp;
         while(left < right) {
             temp = s[left];
             s[left] = s[right];
