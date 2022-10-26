@@ -23,16 +23,15 @@ public class SingleNumber {
 
     // 550 ms, faster than 5.48% & 42.2 MB, less than 95.47%
     public int singleNumber1(int[] nums) {
-
-        for (int i = 0; i < nums.length; i++) {
+        for (int num1 : nums) {
             int count = 0;
-            for (int j = 0; j < nums.length; j++) {
-                if (nums[i] == nums[j]) {
+            for (int num2 : nums) {
+                if (num1 == num2) {
                     count++;
                 }
             }
             if (count == 1) {
-                return nums[i];
+                return num1;
             }
         }
         return -1;
