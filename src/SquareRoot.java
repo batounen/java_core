@@ -16,7 +16,6 @@ public class SquareRoot {
 
     // 2 ms, faster than 83.93% & 41.1 MB, less than 75.13%
     public static int mySqrt(int x) {
-
         if (x == 0) {
             return 0;
         }
