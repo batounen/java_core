@@ -15,14 +15,14 @@ public class SnakeCase {
 
 
     public static String snakeCase(String str) {
-        String result = "" + str.charAt(0);
+        StringBuilder result = new StringBuilder("" + str.charAt(0));
         for (int i = 1; i < str.length(); i++) {
             if (Character.isUpperCase(str.charAt(i))) {
-                result += "_" + str.charAt(i);
+                result.append("_").append(str.charAt(i));
             } else {
-                result += str.charAt(i);
+                result.append(str.charAt(i));
             }
         }
-        return result.toLowerCase();
+        return result.toString().toLowerCase();
     }
 }
