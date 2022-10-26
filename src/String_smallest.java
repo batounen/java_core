@@ -27,17 +27,17 @@ public class String_smallest {
     public static String smallestString(String s) {
         List<String> allPossibleStrings = new ArrayList<>();
         char[] arr = s.toCharArray();
+        StringBuilder temp = new StringBuilder();
         for (int i = 0; i < arr.length; i++) {
-            String temp = "";
+            temp.setLength(0);
             for (int j = 0; j < arr.length; j++) {
                 if (i != j) {
-                    temp += "" + arr[j];
+                    temp.append(arr[j]);
                 }
             }
-            allPossibleStrings.add(temp);
+            allPossibleStrings.add(temp.toString());
         }
         Collections.sort(allPossibleStrings);
         return allPossibleStrings.get(0);
     }
-
 }
