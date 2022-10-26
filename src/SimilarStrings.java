@@ -26,19 +26,15 @@ public class SimilarStrings {
 
 
     public static void main(String[] args) {
-
         List<String> words = new ArrayList<>(Arrays.asList("xyz", "foo", "of", "yx", "bob", "ob"));
         System.out.println(countSimilarPairs(words));
-
     }
 
 
     public static long countSimilarPairs(List<String> words) {
-
         if (words.size() < 1 && words.size() > Math.pow(10, 5)) {
             return 0;
         }
-
         int totalLength = 0;
         for (String each : words) {
             totalLength += each.length();
@@ -46,7 +42,6 @@ public class SimilarStrings {
         if (totalLength > Math.pow(10, 6)) {
             return 0;
         }
-
         int countPairs = 0;
         for (int i = 0; i < words.size(); i++) {
             if (words.get(i).equals("0")) {
@@ -70,7 +65,6 @@ public class SimilarStrings {
                 }
                 System.out.println(words);
             }
-
         }
         return countPairs;
     }
