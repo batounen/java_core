@@ -21,61 +21,52 @@ public class ValidPalindrome {
         s consists only of printable ASCII characters.
      */
 
+    public static void main(String[] args) {
+        System.out.println(isPalindrome1("A man, a plan, a canal: Panama"));
+        System.out.println(isPalindrome1("race a car"));
+        System.out.println(isPalindrome1("0P"));
+    }
 
-    // OPTION 1 - 313 ms, faster than 34.84% & 43.5 MB, less than 69.70%
+    // OPTION 1 - 9 ms, faster than 55.06% & 44.5 MB, less than 43.23%
     public static boolean isPalindrome1(String s) {
-
+        StringBuilder sb = new StringBuilder();
         s = s.toLowerCase();
-        String palindromeChecker = "";
-
         for (int i = 0; i < s.length(); i++) {
-            if (Character.isLetter(s.charAt(i)) || Character.isDigit(s.charAt(i))) {
-                palindromeChecker += s.charAt(i);
+            if (Character.isLetterOrDigit(s.charAt(i))) {
+                sb.append(s.charAt(i));
             }
         }
-        StringBuilder str = new StringBuilder();
-        str.append(palindromeChecker);
-        str = str.reverse();
-
-        return String.valueOf(str).equals(palindromeChecker);
+        return sb.toString().equals(sb.reverse().toString());
     }
 
 
     // OPTION 2 - 1463 ms, faster than 5.00% & 371.6 MB, less than 12.96%
     public static boolean isPalindrome2(String s) {
-
         s = s.toLowerCase();
-        String palindromeChecker = "";
-
+        StringBuilder palindromeChecker = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if (Character.isLetterOrDigit(s.charAt(i))) {
-                palindromeChecker += s.charAt(i);
+                palindromeChecker.append(s.charAt(i));
             }
         }
-
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for (int i = palindromeChecker.length() - 1; i >= 0; i--) {
-            str += palindromeChecker.charAt(i);
+            str.append(palindromeChecker.charAt(i));
         }
-
-        return str.equals(palindromeChecker);
+        return palindromeChecker.toString().equals(str.toString());
     }
 
 
     // OPTION 3 - 6 ms, faster than 67.57% & 43.2 MB, less than 82.74%
     public boolean isPalindrome3(String s) {
-
         if (s != null) {
             s = s.toLowerCase();
         }
-
         int l = 0;
         int r = s.length() - 1;
-
         while (l < r) {
             char lc = s.charAt(l);
             char rc = s.charAt(r);
-
             if (!Character.isLetterOrDigit(lc) || !Character.isLetterOrDigit(rc)) {
                 if (Character.isLetterOrDigit(lc)) {
                     r--;
@@ -97,12 +88,10 @@ public class ValidPalindrome {
 
     // OPTION 4 - 752 ms & 424.3 MB
     public static boolean isPalindrome4(String s) {
-
-        String reverseS = "";
-
+        StringBuilder reverseS = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if (Character.isLetterOrDigit(s.charAt(i))) {
-                reverseS += s.charAt(i);
+                reverseS.append(s.charAt(i));
             }
         }
         int left = 0, right = reverseS.length() - 1;
@@ -120,9 +109,7 @@ public class ValidPalindrome {
 
     // OPTION 5 - 4 ms, faster than 90.28% & 43.8 MB, less than 60.53%
     public static boolean isPalindrome5(String s) {
-
         int l = 0, r = s.length() - 1;
-
         while (l < r) {
             while (l < r && !Character.isLetterOrDigit(s.charAt(l))) {
                 l++;
