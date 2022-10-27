@@ -15,7 +15,6 @@ public class TwoSum {
 
     // OPTION 1 - 56 ms & 45.5 MB memory
     private int[] twoSum(int[] nums, int target) {
-
         int[] result = new int[2];
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -32,7 +31,6 @@ public class TwoSum {
 
     // OPTION 2 - 37 ms & 44.6 MB memory
     private int[] sumTwo(int[] nums, int target) {
-
         int[] res = new int[2];
         for (int i = 0; i < nums.length; i++) {
             int minus = target - nums[i];
@@ -49,7 +47,6 @@ public class TwoSum {
 
     // OPTION 3 - MAP - 3 ms 45.9 MB memory
     public int[] sumOfTwo(int[] nums, int target) {
-
         Map<Integer, Integer> myMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             int remainder = target - nums[i];
