@@ -18,14 +18,12 @@ public class ValidParentheses {
             Output: false
      */
 
-
     public static void main(String[] args) {
         System.out.println("isValidParentheses(\"()[]{}\") = " + isValidParentheses("([]){}"));
     }
 
     // 60/92 test cases passed
     private static boolean isValid(String s) {
-
         for (int i = 0; i < s.length() - 1; i++) {
             char first = s.charAt(i);
             char next = s.charAt(i + 1);
@@ -39,7 +37,6 @@ public class ValidParentheses {
 
     // OPTION 2 - Stack - 3 ms, faster than 62.32% & 42.4 MB, less than 18.60%
     private static boolean isValidParentheses(String s) {
-
         if (s.length() % 2 != 0) {
             return false;
         }
