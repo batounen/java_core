@@ -19,9 +19,17 @@ public class CountNumOfDigits {
         return digit;
     }
 
+    // Bitwise operator
+    static int numCounter3(int num) {
+        int a = 10;
+        return (int) (Math.log(num) / Math.log(a)) + 1;
+    }
+
     public static void main(String[] args) {
-        System.out.println(numCounter1(123098));
-        System.out.println(numCounter2(12309));
+        System.out.println(numCounter1(123098));            // 6
+        System.out.println(numCounter2(12309));             // 5
+        System.out.println(numCounter2(12309123));          // 8
+
     }
 
 }
