@@ -123,4 +123,19 @@ public class ValidPalindrome {
         }
         return true;
     }
+
+    // OPTION 6 - 33 ms, faster than 47% & 47.5 MB, less than 23%
+    public static boolean isPalindrome6(String s) {
+        // Convert string to lowercase and remove non-alphanumeric characters
+        String str = s.toLowerCase().replaceAll("[^a-z0-9]", "");
+
+        // Check if string is a palindrome
+        int n = str.length();
+        for (int i = 0; i < n / 2; i++) {
+            if (str.charAt(i) != str.charAt(n - i - 1)) {
+                return false;  // not a palindrome
+            }
+        }
+        return true;  // is a palindrome
+    }
 }
