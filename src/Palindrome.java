@@ -21,4 +21,9 @@ public class Palindrome {
         }
         System.out.println(original == reversed ? "Number is Palindrome" : "Number is not Palindrome");
     }
+
+    // StringBuilder approach
+    public boolean isPalindrome(int x) {
+        return new StringBuilder(String.valueOf(x)).reverse().toString().equals(String.valueOf(x));
+    }
 }
