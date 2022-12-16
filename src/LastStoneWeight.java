@@ -67,4 +67,27 @@ public class LastStoneWeight {
         }
         return maxHeap.isEmpty() ? 0 : -maxHeap.remove();
     }
+
+    // OPTION 3 - 1 ms, faster than 99.64% & 41.7 MB, less than 95.21%
+    public static int lastStoneWeight3(int[] stones) {
+
+//        lambda to order descending
+//        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
+
+        // Collections class to order descending
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+
+        for (int stone : stones) {
+            pq.offer(stone);
+        }
+
+        while (pq.size() > 1) {
+            int x = pq.poll();
+            int y = pq.poll();
+            if (x != y) {
+                pq.offer(Math.abs(x - y));
+            }
+        }
+        return pq.isEmpty() ? 0 : pq.poll();
+    }
 }
