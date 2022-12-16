@@ -51,4 +51,18 @@ public class SingleNumber {
         }
         return nums[n - 1];
     }
+
+    // 6 ms, faster than 62.73% & 42.2 MB, less than 92.34%
+    public int singleNumber3(int[] nums) {
+        Arrays.sort(nums);
+        for(int i = 0; i <= nums.length - 1; i += 2) {
+            if (i == nums.length - 1) {
+                return nums[i];
+            }
+            if(nums[i] != nums[i + 1]) {
+                return nums[i];
+            }
+        }
+        return -1;
+    }
 }
