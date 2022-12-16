@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class ClimbingStairs {
 
     /*
@@ -21,7 +24,7 @@ public class ClimbingStairs {
      */
 
     // 0 ms, faster than 100.00% & 41.5 MB, less than 8.04%
-    public static int climbStairs(int n) {
+    public static int climbStairs1(int n) {
         int[] dp = new int[n + 1];
         if (n == 1) {
             return 1;
@@ -34,7 +37,24 @@ public class ClimbingStairs {
         return dp[n];
     }
 
+    // 0 ms, faster than 100.00% & 38.8 MB, less than 97.85%
+    public static int climbStairs2(int n) {
+        if (n <= 3) {
+            return n;
+        }
+        List<Integer> ways = new ArrayList<>();
+        ways.add(1);
+        ways.add(2);
+        int i = 2;
+        while (i < n) {
+            ways.add(ways.get(i - 2) + ways.get(i - 1));
+            i++;
+        }
+        return ways.get(n - 1);
+    }
+
     public static void main(String[] args) {
-        System.out.println("climbStairs(3) = " + climbStairs(45));
+        System.out.println("climbStairs1 = " + climbStairs1(45));
+        System.out.println("climbStairs2 = " + climbStairs1(45));
     }
 }
