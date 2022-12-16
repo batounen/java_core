@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 public class ContainsDuplicate {
 
@@ -34,15 +35,25 @@ public class ContainsDuplicate {
 
     // 6 ms, faster than 97.37% & 54.7 MB, less than 93.10% (some runs were 10-27 ms)
     public boolean containsDuplicate2(int[] nums) {
-
         HashSet<Integer> list = new HashSet<>();
-
         for (int each : nums) {
             if (list.contains(each)) {
                 return true;
             } else {
                 list.add(each);
             }
+        }
+        return false;
+    }
+
+    // 8 ms, faster than 87% & 54.4 MB, less than 93.20%
+    public boolean containsDuplicate3(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return true;
+            }
+            set.add(num);
         }
         return false;
     }
