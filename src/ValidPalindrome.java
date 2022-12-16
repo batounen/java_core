@@ -138,4 +138,18 @@ public class ValidPalindrome {
         }
         return true;  // is a palindrome
     }
+
+    // OPTION 7 - 17 ms, faster than 47% & 47.5 MB, less than 23%
+    public static boolean isPalindrome7(String s) {
+        s = s.toLowerCase().strip().replaceAll("[^a-z0-9]", "");
+        int left = 0, right = s.length() - 1;
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
 }
