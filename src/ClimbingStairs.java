@@ -43,14 +43,15 @@ public class ClimbingStairs {
             return n;
         }
         List<Integer> ways = new ArrayList<>();
+        ways.add(0);
         ways.add(1);
         ways.add(2);
-        int i = 2;
-        while (i < n) {
+        int i = 3;
+        while (i <= n) {
             ways.add(ways.get(i - 2) + ways.get(i - 1));
             i++;
         }
-        return ways.get(n - 1);
+        return ways.get(n);
     }
 
     public static void main(String[] args) {
