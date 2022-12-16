@@ -46,15 +46,12 @@ public class ContainsDuplicate {
         return false;
     }
 
-    // 8 ms, faster than 87% & 54.4 MB, less than 93.20%
+    // 8 ms, faster than 87% & 54.8 MB, less than 89%
     public boolean containsDuplicate3(int[] nums) {
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> numSet = new HashSet<>();
         for (int num : nums) {
-            if (set.contains(num)) {
-                return true;
-            }
-            set.add(num);
+            numSet.add(num);
         }
-        return false;
+        return numSet.size() < nums.length;
     }
 }
