@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
 
-public class CharsWithDuplicatetdTimes {
+public class CharsWithDuplicatedTimes {
 
     // String approach
     public static String countDuplicate1(String s) {
