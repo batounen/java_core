@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class FibonacciNumbers {
 
@@ -25,7 +26,7 @@ public class FibonacciNumbers {
     // 0 ms, faster than 100.00% & 40.9 MB, less than 40.48%
     public int fib(int n) {
 
-        ArrayList<Integer> fiboNumbers = new ArrayList<>();
+        List<Integer> fiboNumbers = new ArrayList<>();
         fiboNumbers.add(0);
         fiboNumbers.add(1);
 
