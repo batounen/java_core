@@ -9,7 +9,6 @@ public class ArmstrongNumbers {
     public static void main(String[] args) {
         System.out.println(armstrongNumber(370));
         System.out.println(armstrongNumberStringWay(153));
-
     }
 
 
@@ -28,10 +27,9 @@ public class ArmstrongNumbers {
     // OPTION 2 - String way
     public static boolean armstrongNumberStringWay(int num) {
         int total = 0;
-        String str = Integer.toString(num);
-        String[] s = str.split("");
+        String[] s = Integer.toString(num).split("");
         for (String each : s) {
-            total += Math.pow(Integer.parseInt(each), str.length());
+            total += Math.pow(Integer.parseInt(each), s.length);
         }
         return total == num;
     }
