@@ -9,22 +9,22 @@ public class DivisibilityCheck {
     // 2, 3 and 5 - CodilityTestCoders
 
     public static void main(String[] args) {
-        printNums(99);
+        printNums(10);
     }
 
     public static void printNums(int n) {
         for (int i = 1; i <= n; i++) {
-            String temp = "";
+            StringBuilder temp = new StringBuilder();
             if (i % 2 == 0) {
-                temp += "Codility";
+                temp.append("Codility");
             }
             if (i % 3 == 0) {
-                temp += "Test";
+                temp.append("Test");
             }
             if (i % 5 == 0) {
-                temp += "Coders";
+                temp.append("Coders");
             }
-            if (!temp.isEmpty()) {
+            if (temp.length() != 0) {
                 System.out.println(temp);
             } else {
                 System.out.println(i);
